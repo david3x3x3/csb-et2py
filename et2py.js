@@ -18,11 +18,11 @@ w.onmessage = (e) => {
     document.getElementById("results").innerHTML = s;
   }
   if (progress) {
-    progress = `nodes=${progress} rate=${(
+    progressMsg = `nodes=${progress} rate=${(
       ((1.0 * progress) / (Date.now() - startTime)) *
       1000
     ).toFixed(2)} nodes/s`;
-    document.getElementById("progress").innerHTML = progress;
+    document.getElementById("progress").innerHTML = progressMsg;
   }
   if (url) {
     document.getElementById(

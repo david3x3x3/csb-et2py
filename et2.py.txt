@@ -45,7 +45,7 @@ while Q:
     solution, remain = Q.pop()
     nodes += 1
     if nodes % 100000 == 0:
-        self.postMessage(to_js({'progress': nodes}))
+        self.postMessage(to_js({'progress': nodes}, dict_converter=Object.fromEntries))
     if len(solution) > best:
         # print('\n', len(solution)-16, ' '.join([f'{p[0]}/{p[1]}' for p in solution[width:]]))
         url = ''.join([pieces[p] for p in solution[width:]])
