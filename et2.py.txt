@@ -21,7 +21,6 @@ pieces0 = ['aaaa'] + (
   'upmm/npmo/rrmo/ntmq/owms/utms/rsmt/rvmt/nsnn/uqno/oqnq/osnq/rpnq/qunr/pwns/vpns/' +
   'ovnt/qvnt/prop/stop/wsoq/uwov/vwpp/rqpq/qvpr/uvps/wtqq/trqr/usrt/vusu/uwsw/vwtw').split('/')
 
-# url = 'https://e2.bucas.name/#puzzle=EternityII&board_w=16&board_h=16&board_edges='
 width, height = 16, 16
 pieces = dict()
 for i, p in enumerate(pieces0):
