@@ -1,0 +1,15 @@
+{
+  "name": "csb-et2py",
+  "version": "1.0.0",
+  "description": "python eternity2 solver running in browser",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve"
+  },
+  "keywords": ["html", "css"],
+  "author": "David Barr",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "11.2.0"
+  }
+}
