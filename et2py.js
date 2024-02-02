@@ -1,10 +1,9 @@
 var w = new Worker("./webworker.js");
 var startTime = Date.now();
 w.onmessage = (e) => {
-  // console.log(e.data);
-  pieces = e.data.get("pieces");
+  const {pieces, progress, url, results} = e.data;
   if (pieces) {
-    s = `<pre> ${pieces.length} pieces<br>`;
+    s = `<pre>${pieces.length} pieces<br>`;
     for (i = 0; i < pieces.length; i++) {
       s2 = pieces[i];
       while (s2.length < 5) {
@@ -18,7 +17,6 @@ w.onmessage = (e) => {
     s += "</pre>";
     document.getElementById("results").innerHTML = s;
   }
-  progress = e.data.get("progress");
   if (progress) {
     progress = `nodes=${progress} rate=${(
       ((1.0 * progress) / (Date.now() - startTime)) *
@@ -26,7 +24,6 @@ w.onmessage = (e) => {
     ).toFixed(2)} nodes/s`;
     document.getElementById("progress").innerHTML = progress;
   }
-  url = e.data.get("url");
   if (url) {
     document.getElementById(
       "url"

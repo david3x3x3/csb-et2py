@@ -1,4 +1,4 @@
-from js import self, console
+from js import self, console, Object
 from pyodide.ffi import to_js
 import random
 import sys
@@ -54,7 +54,7 @@ while Q:
         url = 'https://e2.bucas.name/#puzzle=EternityII&board_w=16&board_h=16&board_edges=' + url
         best = len(solution)
         p2 = [f'{p[0]}/{p[1]}' for p in solution[width:]]
-        self.postMessage(to_js({'pieces': p2, 'url': url}))
+        self.postMessage(to_js({'pieces': p2, 'url': url}, dict_converter=Object.fromEntries))
     if not remain:
         print(solution[width:])
         solcount += 1
